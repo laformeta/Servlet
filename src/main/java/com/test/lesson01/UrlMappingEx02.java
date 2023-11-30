@@ -18,6 +18,9 @@ public class UrlMappingEx02 extends HttpServlet{
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html");
 		
+		
+		// add comment
+		
 		PrintWriter out = response.getWriter();
 		// 서블릿(Servlet) : 자바 + html
 		// 1 ~ 10 합계 : 1+2+...+10
