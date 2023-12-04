@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Quiz02</title>
+<title>길이 변환</title>
 <!-- bootstrap CDN link -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
 		integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
@@ -16,11 +16,27 @@
 		crossorigin="anonymous"></script>
 </head>
 <body>
-
-	<h1>날짜, 시간 링크</h1>
-    <a class="btn btn-primary mt-3" href="/lesson02/quiz02_1.jsp?type=time">현재 시간 보기</a>
-    <a class="btn btn-success mt-3" href="/lesson02/quiz02_1.jsp?type=date">현재 날짜 보기</a>
-    
+	<div class="container">
+			<h1>길이 변환</h1>
+		<form method="post" action="/lesson02/quiz04_1.jsp">
+			<div class="d-flex align-items-end mb-2">
+				<input type="text" class="form-control col-4 mr-2" name="cm">
+				<div>cm</div>
+			</div>
+				
+				<label for="inch">인치</label>
+				<input type="checkbox" id="inch" name="unit" value="인치">
+				<label for="yard">야드</label>
+				<input type="checkbox" id="yard" name="unit" value="야드">
+				<label for="feet">피트</label>
+				<input type="checkbox" id="feet" name="unit" value="피트">
+				<label for="meter">미터</label>
+				<input type="checkbox" id="meter" name="unit" value="미터"><br>
+				
+				<button type="submit" class="btn btn-primary form-control col-2">변환하기</button>
+			
+		</form>
+	</div>
 
 </body>
 </html>
