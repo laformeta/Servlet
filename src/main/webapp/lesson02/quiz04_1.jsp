@@ -10,32 +10,31 @@
 <body>
 	<%
 		String[] unitArr = request.getParameterValues("unit");
-		double cm = Integer.parseInt(request.getParameter("cm"));
+		int cm = Integer.parseInt(request.getParameter("cm"));
 		double in = cm / 2.54;
 		double yd = cm / 91.44;
 		double ft = cm / 30.48;
 		double m = cm / 100.0;
 	%>
-	
+	<div class="container">
 	<h1>길이 변환 결과</h1>
-	<b>24cm</b>
+	<h3><%= cm %>cm</h3>
 	<hr>
+	<h2>
 	<% 
     for (String unit : unitArr) {
         if (unit.equals("인치")) {
-            out.println("<p>" + in + " 인치</p>");
-        }
-        if (unit.equals("야드")) {
-            out.println("<p>" + yd + " 야드</p>");
-        }
-        if (unit.equals("피트")) {
-            out.println("<p>" + ft + " 피트</p>");
-        }
-        if (unit.equals("미터")) {
-            out.println("<p>" + m + " 미터</p>");
+            out.print(in + "in<br>");
+        } else if (unit.equals("야드")) {
+            out.print(yd + "yd<br>");
+        } else if (unit.equals("피트")) {
+            out.print(ft + "ft<br>");
+        } else if (unit.equals("미터")) {
+            out.print(m + "m<br>");
         }
     }
 	%>
-	
+	</h2>
+	</div>
 </body>
 </html>
