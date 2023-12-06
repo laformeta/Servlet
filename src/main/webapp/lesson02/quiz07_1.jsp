@@ -46,8 +46,12 @@
 	 	    
 	 	    String menu = request.getParameter("menu");
 	 	    String starPointFilter = request.getParameter("starPointFilter");
+	 	   boolean exclude = (starPointFilter != null);
 	 	    for (Map<String, Object> item : list) {
-	 	    	if (item.containsValue(menu) && (starPointFilter == null)) {
+	 	    	if (item.containsValue(menu)) {
+	 	    		if (exclude && (double) item.get("point") <= 4.0) {
+	 	    			continue;
+	 	    		}
 	 		%>
 	 			<tr>
 	 				<td><%= item.get("menu") %></td>
